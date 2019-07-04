@@ -33,12 +33,14 @@ public class SampleController {
 //        System.out.println("after calculate");
 //        System.out.println("price: " + calcMoney);
         int button;
-        System.out.println("사용자가 가지고 있는 액수 : " + userMoney);
 
         while (!end) {
+
             printMenu();
+            System.out.println("사용자가 가지고 있는 액수 : " + userMoney);
             button = in.nextInt();
-            printMenu();
+
+            //printMenu();
             if (userMoney < 0) {
                 System.out.println("액수가 부족합니다.");
                 end = true;
@@ -47,7 +49,7 @@ public class SampleController {
                 totalPrice += calcTotalPrice(1000, 1);
                 userMoney = calcUserMoney(userMoney, totalPrice);
             }
-            else if (buttonn == 2) {
+            else if (button == 2) {
                 totalPrice += calcTotalPrice(1500, 1);
                 userMoney = calcUserMoney(userMoney, totalPrice);
             }
@@ -57,6 +59,10 @@ public class SampleController {
             }
             else if (button == 4) {
                 totalPrice += calcTotalPrice(1000, 1);
+                userMoney = calcUserMoney(userMoney, totalPrice);
+            }
+            else if ( button == 5 ){
+                totalPrice += calcTotalPrice(1500, 1);
                 userMoney = calcUserMoney(userMoney, totalPrice);
             }
             else if (button == 0) {
